@@ -33,7 +33,7 @@ namespace TestCorina02
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
 
-            string token = "NjY0MDA2ODE3NjU5MjI0MDY3.XhQyng.O26M8XROiuVOu4JoL2zmngZChmM";
+            string token = "";
             _client.Log += _client_Log;
 
             await RegisterCommandsAsync();
