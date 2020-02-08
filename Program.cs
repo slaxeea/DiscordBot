@@ -33,7 +33,7 @@ namespace TestCorina02
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
 
-            string token = "";
+            string token = "/*token für den Bot, den ich hier nicht veröffentlichen kann*/";
             _client.Log += _client_Log;
 
             await RegisterCommandsAsync();
