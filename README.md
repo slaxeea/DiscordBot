@@ -9,8 +9,7 @@ Author:	Simon Kappeler
 Datum:	8.2.2020      
 Version:	1.0    
 Status:	In Bearbeitung        
-Letzte Änderung:	Upload der Files und erstellen
-                 des README.md
+Letzte Änderung:	Topics hinzugefügt
 ________________________________________________
 
 Ich hoff dass das dir witerhilft,
