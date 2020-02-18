@@ -40,7 +40,7 @@ namespace TestCorina02
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
 
-            string token = "NjY0MDA2ODE3NjU5MjI0MDY3.XkubIA.pidGhY4w9M9ONIwE4gUH8s0-5iM";
+            string token = "/*Hier Bot Token einfügen, den ich nicht auf Github veröffentlichen darf*/";
             _client.Log += _client_Log;
             _client.UserJoined += AnnounceJoindeUser; //Hook into the UserJoined event of the client.
 
