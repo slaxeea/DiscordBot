@@ -11,7 +11,8 @@ Version:	1.1
 Status:	In Bearbeitung        
 Letzte Änderungen:	                                                          
 -Der Bot fügt neu gejointe User automatisch in die Database ein                                         
--Das System verteilt weniger coins, die Items werden teurer                                         
+-Das System verteilt weniger coins, die Items werden teurer                                   
+-Ein Komentarheader hinzugefügt                                                     
 ________________________________________________
 
 Ich hoff dass das dir witerhilft,
