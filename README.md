@@ -6,7 +6,7 @@ Das Projekt isch ned abgschlosse, ich wirds no es paar mal verändere.
 Details zu dem Projekt:
 ________________________________________________
 Author:	Simon Kappeler        
-Datum:	8.2.2020      
+Datum:	18.2.2020      
 Version:	1.1    
 Status:	In Bearbeitung        
 Letzte Änderungen:	
