@@ -7,9 +7,9 @@ Details zu dem Projekt:
 ________________________________________________
 Author:	Simon Kappeler        
 Datum:	8.2.2020      
-Version:	1.0    
+Version:	1.1    
 Status:	In Bearbeitung        
-Letzte Änderung:	Topics hinzugefügt
+Letzte Änderung:	Der Bot fügt neu gejointe User automatisch in die Database ein
 ________________________________________________
 
 Ich hoff dass das dir witerhilft,
