@@ -9,7 +9,9 @@ Author:	Simon Kappeler
 Datum:	8.2.2020      
 Version:	1.1    
 Status:	In Bearbeitung        
-Letzte Änderung:	Der Bot fügt neu gejointe User automatisch in die Database ein
+Letzte Änderungen:	
+-Der Bot fügt neu gejointe User automatisch in die Database ein
+-Das System verteilt weniger coins, die Items werden teurer
 ________________________________________________
 
 Ich hoff dass das dir witerhilft,
