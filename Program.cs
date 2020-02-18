@@ -9,7 +9,15 @@ using Discord.Commands;
 using Discord.WebSocket;
 using Microsoft.Extensions.DependencyInjection;
 using System.Data.SqlClient;
-using System.Data;
+
+
+/*
+ * Datei:                TestCorina02VS/Program.cs
+ * Author:               Simon Kappeler
+ * Datum:                18.2.2020
+ * Beschreibung:         Ein Bot der auf Discord auf Nachrichten automatisch 
+ *                       antwortet.
+ */
 
 
 namespace TestCorina02
@@ -22,7 +30,6 @@ namespace TestCorina02
         private DiscordSocketClient _client;
         private CommandService _commands;
         private IServiceProvider _services;
-
         public async Task RunBotAsync()
         {
             _client = new DiscordSocketClient();
@@ -33,8 +40,9 @@ namespace TestCorina02
                 .AddSingleton(_commands)
                 .BuildServiceProvider();
 
-            string token = "/*token für den Bot, den ich hier nicht veröffentlichen kann*/";
+            string token = "NjY0MDA2ODE3NjU5MjI0MDY3.XkubIA.pidGhY4w9M9ONIwE4gUH8s0-5iM";
             _client.Log += _client_Log;
+            _client.UserJoined += AnnounceJoindeUser; //Hook into the UserJoined event of the client.
 
             await RegisterCommandsAsync();
 
@@ -43,15 +51,9 @@ namespace TestCorina02
             await _client.StartAsync();
 
             await Task.Delay(-1);
+
         }
-        //Wenn irgeneppis ned funktioniert eifach das unde dra lösche
-        private async Task AnnounceUserJoined(SocketGuildUser user)
-        {
-            Console.WriteLine("En neue User isch joint. Er heiist " + Convert.ToString(user));
-            var guild = user.Guild;
-            var channel = guild.DefaultChannel;
-            await channel.SendMessageAsync($"Willkomme uf de Server, {user.Mention} huso!");
-        }
+
         private Task _client_Log(LogMessage arg)
         {
             Console.WriteLine(arg);
@@ -77,6 +79,43 @@ namespace TestCorina02
                 if (!result.IsSuccess) Console.WriteLine(result.ErrorReason);
             }
         }
-    
+
+        public async Task AnnounceJoindeUser(SocketGuildUser user)
+        {
+
+            var guild = user.Guild;
+            var channel = guild.DefaultChannel;
+            Console.WriteLine("En neue user isch joint, er heisst " + user);
+            await channel.SendMessageAsync($"Willkomme uf de Server, {user.Mention}");
+            string username = user.Username;
+
+
+            string connetionString;
+            SqlConnection cnn;
+            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+            cnn = new SqlConnection(connetionString);
+            cnn.Open();
+            Console.WriteLine("User i Database hinzuefüege");
+
+            Guid newGUID = Guid.NewGuid();
+
+
+            string insertQuery = "Insert into EconomyCoins (Coins, Username, Streak, Plus) Values (0, '" + username + "',0,0);";
+            SqlCommand com = new SqlCommand(insertQuery, cnn);
+            com.ExecuteNonQuery();
+
+            insertQuery = "Insert into Items (Username, Laptop, Phone, Pc, Plane, Dildo, Playstation) Values ('" + username + "',0,0,0,0,0,0);";
+            SqlCommand com2 = new SqlCommand(insertQuery, cnn);
+            com2.ExecuteNonQuery();
+
+            insertQuery = "Insert into Warmode (Username, HPMain, StrenghTank, StrenghShip, Mode, Upgradepoints)Values('" + username + "',100,20,20,'neutral',20);";
+            SqlCommand com3 = new SqlCommand(insertQuery, cnn);
+            com2.ExecuteNonQuery();
+            cnn.Close();
+        }
+
     }
 }
+
+
+
