@@ -92,7 +92,7 @@ namespace TestCorina02
 
             string connetionString;
             SqlConnection cnn;
-            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+            connetionString = @"Data Source";
             cnn = new SqlConnection(connetionString);
             cnn.Open();
             Console.WriteLine("User i Database hinzuefüege");
