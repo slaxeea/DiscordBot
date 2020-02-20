@@ -16,8 +16,8 @@ Letzte Änderungen:
 -Ein Komentarheader hinzugefügt                                                     
 
 Neuste Commands:
--Russisch Roulette
--Zahlen erraten
+-Russisch Roulette                                                                                
+-Zahlen erraten                                                                                                                       
 ________________________________________________
 
 Ich hoff dass das dir witerhilft,
