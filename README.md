@@ -15,7 +15,7 @@ Letzte Änderungen:
 -Das System verteilt weniger coins, die Items werden teurer                                   
 -Ein Komentarheader hinzugefügt                                                     
 
-Neuste Commands:
+Neuste Commands:                                                            
 -Russisch Roulette                                                                                
 -Zahlen erraten                                                                                                                       
 ________________________________________________
