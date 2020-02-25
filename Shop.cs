@@ -46,7 +46,7 @@ namespace DiscordBot1.Shop
 
                 string connetionString;
                 SqlConnection cnn;
-                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
+                connetionString = @"Data Source";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
                 Console.WriteLine("Connection Opend");
@@ -88,7 +88,7 @@ namespace DiscordBot1.Shop
                 int coins = 0;
                 string connetionString;
                 SqlConnection cnn;
-                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
+                connetionString = @"Data Source";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
                 Console.WriteLine("Connection Opend");
@@ -168,7 +168,7 @@ namespace DiscordBot1.Shop
 
                 string connetionString;
                 SqlConnection cnn;
-                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
+                connetionString = @"Data Source";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
                 Console.WriteLine("Connection Opend");
@@ -223,7 +223,7 @@ namespace DiscordBot1.Shop
 
                     string connetionString;
                     SqlConnection cnn;
-                    connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
+                    connetionString = @"Data Source";
                     cnn = new SqlConnection(connetionString);
                     cnn.Open();
                     Console.WriteLine("Connection Opend");
@@ -266,7 +266,7 @@ namespace DiscordBot1.Shop
                 string author = Context.User.Username;
                 string connetionString;
                 SqlConnection cnn;
-                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
+                connetionString = @"Data Source";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
                 Console.WriteLine("Connection Open");
@@ -305,7 +305,7 @@ namespace DiscordBot1.Shop
 
                     string connetionString;
                     SqlConnection cnn;
-                    connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
+                    connetionString = @"Data Source";
                     cnn = new SqlConnection(connetionString);
                     cnn.Open();
                     Console.WriteLine("Connection Opend");
@@ -372,7 +372,7 @@ namespace DiscordBot1.Shop
                 }
 
                 SqlConnection cnn;
-                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
+                connetionString = @"Data Source";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
                 Console.WriteLine("Connection Opend");
