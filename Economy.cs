@@ -11,8 +11,16 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Data.SqlClient;
 using System.Data;
 
+/*
+* Datei:                TestCorina02VS/Economy.cs
+* Author:               Simon Kappeler
+* Datum:                18.2.2020
+* Beschreibung:         Die Commands auf die der Bot antworten kann, die etwas mit der Economy.mdf Database zu tun haben.
+*/
+
 public class Commands : ModuleBase<SocketCommandContext>
 {
+
 
     [Command("coins")]
     public async Task Coins()
@@ -23,7 +31,7 @@ public class Commands : ModuleBase<SocketCommandContext>
         int plus2 = 0;
         string connetionString;
         SqlConnection cnn;
-        connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+        connetionString = @"Data Source";
         cnn = new SqlConnection(connetionString);
         cnn.Open();
         try
@@ -42,16 +50,17 @@ public class Commands : ModuleBase<SocketCommandContext>
         {
             Console.WriteLine(e.ToString());
         }
+
         cnn.Close();
         Random rnd = new Random();
-        int zahl = rnd.Next(1, 10);
+        int zahl = rnd.Next(1, 5);
         Random plus3 = new Random();
-        int plus4 = rnd.Next(1, 10);
+        int plus4 = rnd.Next(1, 5);
 
-        coinsübrcho = 20 + zahl + plus2;
+        coinsübrcho = 10 + zahl + plus2;
         //Console.WriteLine(coinsübrcho);
         cnn.Open();
-        Console.WriteLine("Connection Opend");
+        Console.WriteLine("\nConnection Opend");
 
         Guid newGUID = Guid.NewGuid();
 
@@ -68,7 +77,7 @@ public class Commands : ModuleBase<SocketCommandContext>
         com3.ExecuteNonQuery();
 
         cnn.Close();
-        Console.WriteLine("Connection Closed");
+        Console.WriteLine("Connection Closed\n");
         //Console.WriteLine("Plus2: " + plus2 + "\nRND Zahl: " + zahl + "\nPlus4:"+plus4+"\n" );
         await Context.Channel.SendMessageAsync(Context.Message.Author.Mention + " Du hesch jetzt " + coinsübrcho + " Coins übercho");
 
@@ -78,10 +87,9 @@ public class Commands : ModuleBase<SocketCommandContext>
     public async Task leticiadiehoe()
     {
         string author = Context.Message.Author.Username;
-        int plus2 = 0;
         string connetionString;
         SqlConnection cnn;
-        connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+        connetionString = @"Data Source";
         cnn = new SqlConnection(connetionString);
 
         cnn.Open();
@@ -108,7 +116,7 @@ public class Commands : ModuleBase<SocketCommandContext>
 
         string connetionString;
         SqlConnection cnn;
-        connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+        connetionString = @"Data Source";
         cnn = new SqlConnection(connetionString);
         cnn.Open();
         Console.WriteLine("Connection Opend");
@@ -123,7 +131,6 @@ public class Commands : ModuleBase<SocketCommandContext>
                 //Console.WriteLine(myReader["Coins"].ToString());
                 coiins = myReader["Coins"].ToString();
                 coins = Convert.ToInt32(coiins);
-
             }
         }
         catch (Exception e)
@@ -136,27 +143,7 @@ public class Commands : ModuleBase<SocketCommandContext>
 
         await ReplyAsync(Context.Message.Author.Mention + " Du hesch " + coins + " Coins");
     }
-    [Command("zahlerate")]
-    public async Task zahlerate(int zahl)
-    {
-        string author = Context.Message.Author.Username;
-
-        Random rnd = new Random();
-        int zpc = rnd.Next(1, 11);
-
-        if (zahl == zpc)
-        {
-            await ReplyAsync("Du hesch richtig grate");
-        }
-        else
-        {
-            await ReplyAsync("Du hesch verlore, d Zahl wär " + zpc + " gsi");
-        }
-
-        Console.WriteLine(zahl);
-        int coins = rnd.Next(20, 50);
-
-    }
+   
     [Command("rps")]
     public async Task rps(string choice)
     {
@@ -252,7 +239,7 @@ public class Commands : ModuleBase<SocketCommandContext>
             string author = Context.User.Username;
             string connetionString;
             SqlConnection cnn;
-            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+            connetionString = @"Data Source";
             cnn = new SqlConnection(connetionString);
             cnn.Open();
             Console.WriteLine("Connection Open");
@@ -274,7 +261,7 @@ public class Commands : ModuleBase<SocketCommandContext>
             string author = Context.User.Username;
             string connetionString;
             SqlConnection cnn;
-            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+            connetionString = @"Data Source";
             cnn = new SqlConnection(connetionString);
             cnn.Open();
             Console.WriteLine("Connection Open");
@@ -296,7 +283,7 @@ public class Commands : ModuleBase<SocketCommandContext>
         string author = Context.User.Username;
         string connetionString;
         SqlConnection cnn;
-        connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+        connetionString = @"Data Source";
         cnn = new SqlConnection(connetionString);
         cnn.Open();
         Console.WriteLine("Connection Open");
@@ -325,7 +312,7 @@ public class Commands : ModuleBase<SocketCommandContext>
 
             string connetionString;
             SqlConnection cnn;
-            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+            connetionString = @"Data Source";
             cnn = new SqlConnection(connetionString);
             cnn.Open();
             Console.WriteLine("Connection Open");
@@ -362,7 +349,7 @@ public class Commands : ModuleBase<SocketCommandContext>
             int coins; string coiins;
             string connetionString;
             SqlConnection cnn;
-            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+            connetionString = @"Data Source";
             cnn = new SqlConnection(connetionString);
             cnn.Open();
             Console.WriteLine("Connection Opend");
@@ -403,7 +390,7 @@ public class Commands : ModuleBase<SocketCommandContext>
         {
             string connetionString;
             SqlConnection cnn;
-            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+            connetionString = @"Data Source";
             cnn = new SqlConnection(connetionString);
             string insertQuery = "";
             cnn.Open();
@@ -411,7 +398,7 @@ public class Commands : ModuleBase<SocketCommandContext>
             switch (ding)
             {
                 case "plus":
-                    insertQuery = "Update EconomyCoins Set Coins = Coins +"  + +amnt + " where Username = '" + user + "';";
+                    insertQuery = "Update EconomyCoins Set Coins = Coins +" + +amnt + " where Username = '" + user + "';";
                     break;
                 case "minus":
                     insertQuery = "Update EconomyCoins Set Coins = Coins - " + +amnt + " where Username = '" + user + "';";
@@ -425,7 +412,7 @@ public class Commands : ModuleBase<SocketCommandContext>
                 default:
                     break;
             }
-            
+
             Console.WriteLine("Connection Opend");
 
             Guid newGUID = Guid.NewGuid();
@@ -457,7 +444,7 @@ public class Commands : ModuleBase<SocketCommandContext>
 
             string connetionString;
             SqlConnection cnn;
-            connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
+            connetionString = @"Data Source";
             cnn = new SqlConnection(connetionString);
             cnn.Open();
             Console.WriteLine("Connection Opend");
@@ -492,31 +479,3 @@ public class Commands : ModuleBase<SocketCommandContext>
 
     }
 }
-
-
-/*
-static void Main(string[] args)
-    {
-        string connetionString;
-        SqlConnection cnn;
-        connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30";
-        cnn = new SqlConnection(connetionString);
-        cnn.Open();
-        Console.WriteLine("Connection Open!");
-
-        Guid newGUID = Guid.NewGuid();
-
-
-        string insertQuery = "Update EconomyCoins Set Coins = Coins + 10; ";
-        SqlCommand com = new SqlCommand(insertQuery, cnn);
-       
-
-
-        com.ExecuteNonQuery();
-
-
-        cnn.Close();
-
-    } 
-     
-*/
