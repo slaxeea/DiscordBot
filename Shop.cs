@@ -11,6 +11,13 @@ using Microsoft.Extensions.DependencyInjection;
 using System.Data.SqlClient;
 using System.Data;
 
+/*
+* Datei:                TestCorina02VS/Shop.cs
+* Author:               Simon Kappeler
+* Datum:                18.2.2020
+* Beschreibung:         Die Commands auf die der Bot antworten kann, die etwas mit der Economy.mdf Database zu tun haben und auf die Item / Items
+*/
+
 namespace DiscordBot1.Shop
 {
 
@@ -29,8 +36,7 @@ namespace DiscordBot1.Shop
                 itemname[1] = "Phone";
                 itemname[2] = "Pc";
                 itemname[3] = "Plane";
-                itemname[4] = "Dildo";
-                itemname[5] = "Playstation";
+                itemname[4] = "Playstation";
 
                 int i = 0;
                 string cost = "";
@@ -40,14 +46,14 @@ namespace DiscordBot1.Shop
 
                 string connetionString;
                 SqlConnection cnn;
-                connetionString = @"Data Source";
+                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
                 Console.WriteLine("Connection Opend");
 
                 try
                 {
-                    while (times < 6)
+                    while (times < 5)
                     {
                         SqlDataReader myReader = null;
                         SqlCommand myCommand = new SqlCommand("Select Cost from ItemCost Where Item = '" + itemname[i] + "'; ", cnn);
@@ -69,7 +75,7 @@ namespace DiscordBot1.Shop
 
                 cnn.Close();
                 Console.WriteLine("Connection Closed");
-                await ReplyAsync(Context.Message.Author.Mention + "D Items kostet: \n"+ itemname[0] + ":   " + item[0] +"    "+coins+ "   \n" + itemname[1] + ":    " + item[1] +"     "+coins+"  \n" + itemname[2] + ":           " + item[2] +"     "+coins+ " \n" + itemname[3] + ":     " + item[3] +" "+ coins+"  \n" + itemname[4] + ":     " + item[4]+"   "+coins+"\n"+itemname[5]+":  "+item[5]+"  "+coins);
+                await ReplyAsync(Context.Message.Author.Mention + "D Items kostet: \n" + itemname[0] + ":   " + item[0] + "    " + coins + "   \n" + itemname[1] + ":    " + item[1] + "     " + coins + "  \n" + itemname[2] + ":           " + item[2] + "     " + coins + " \n" + itemname[3] + ":     " + item[3] + " " + coins + "  \n" + itemname[4] + ":     " + item[4] + "   " + coins + "\n");
             }
             [Command("buy")]
             public async Task buy(string item, int anz)
@@ -82,7 +88,7 @@ namespace DiscordBot1.Shop
                 int coins = 0;
                 string connetionString;
                 SqlConnection cnn;
-                connetionString = @"Data Source";
+                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
                 Console.WriteLine("Connection Opend");
@@ -153,7 +159,7 @@ namespace DiscordBot1.Shop
                 itemname[1] = "Phone";
                 itemname[2] = "Pc";
                 itemname[3] = "Plane";
-                itemname[4] = "Dildo";
+                itemname[4] = "Playstation";
 
                 int i = 0;
                 string pc2 = "";
@@ -162,14 +168,14 @@ namespace DiscordBot1.Shop
 
                 string connetionString;
                 SqlConnection cnn;
-                connetionString = @"Data Source";
+                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
                 Console.WriteLine("Connection Opend");
 
                 try
                 {
-                    while (times < 6)
+                    while (times < 5)
                     {
                         SqlDataReader myReader = null;
                         SqlCommand myCommand = new SqlCommand("Select " + itemname[i] + " from Items Where Username = '" + author + "'; ", cnn);
@@ -208,7 +214,7 @@ namespace DiscordBot1.Shop
                     itemname[1] = "Phone";
                     itemname[2] = "Pc";
                     itemname[3] = "Plane";
-                    itemname[4] = "Dildo";
+                    itemname[4] = "Playstation";
 
                     int i = 0;
                     string pc2 = "";
@@ -217,14 +223,14 @@ namespace DiscordBot1.Shop
 
                     string connetionString;
                     SqlConnection cnn;
-                    connetionString = @"Data Source";
+                    connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
                     cnn = new SqlConnection(connetionString);
                     cnn.Open();
                     Console.WriteLine("Connection Opend");
 
                     try
                     {
-                        while (times < 6)
+                        while (times < 5)
                         {
                             SqlDataReader myReader = null;
                             SqlCommand myCommand = new SqlCommand("Select " + itemname[i] + " from Items Where Username = '" + user + "'; ", cnn);
@@ -260,7 +266,7 @@ namespace DiscordBot1.Shop
                 string author = Context.User.Username;
                 string connetionString;
                 SqlConnection cnn;
-                connetionString = @"Data Source";
+                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
                 cnn = new SqlConnection(connetionString);
                 cnn.Open();
                 Console.WriteLine("Connection Open");
@@ -290,7 +296,7 @@ namespace DiscordBot1.Shop
                     itemname[1] = "Phone";
                     itemname[2] = "Pc";
                     itemname[3] = "Plane";
-                    itemname[4] = "Dildo";
+                    itemname[4] = "Playstation";
 
                     int i = 0;
                     string pc2 = "";
@@ -299,14 +305,14 @@ namespace DiscordBot1.Shop
 
                     string connetionString;
                     SqlConnection cnn;
-                    connetionString = @"Data Source";
+                    connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
                     cnn = new SqlConnection(connetionString);
                     cnn.Open();
                     Console.WriteLine("Connection Opend");
 
                     try
                     {
-                        while (times < 6)
+                        while (times < 5)
                         {
                             SqlDataReader myReader = null;
                             SqlCommand myCommand = new SqlCommand("Select " + itemname[i] + " from Items Where Username = '" + user + "'; ", cnn);
@@ -363,54 +369,29 @@ namespace DiscordBot1.Shop
                     case "House":
                         monback = 8500;
                         break;
-                    case "Dildo":
-                        monback = 0;
-                        break;
                 }
-                if (item == "Dildo")
-                {
-                    await ReplyAsync("Das chasch du doch ned verchaufe! Als ob das öpper no wott. Schmeiss das wegg du grüsel");
-                    SqlConnection cnn;
-                    connetionString = @"Data Source";
-                    cnn = new SqlConnection(connetionString);
-                    cnn.Open();
-                    Console.WriteLine("Connection Opend");
 
+                SqlConnection cnn;
+                connetionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\kappe\Desktop\Schuel\IMS\Lernatelier\DiscordBot\TestCorina02VS\TestCorina02VS\Economy.mdf;Integrated Security=True;Connect Timeout=30;MultipleActiveResultSets=true";
+                cnn = new SqlConnection(connetionString);
+                cnn.Open();
+                Console.WriteLine("Connection Opend");
 
-                    string insertQuery = "Update Items Set " + item + " = " + item + " - " + anz + " where Username = '" + author + "';";
+                zahle = Convert.ToInt32(monback) * Convert.ToInt32(anz);
 
-                    //Console.WriteLine("Query: " + insertQuery);
-                    SqlCommand com = new SqlCommand(insertQuery, cnn);
-                    com.ExecuteNonQuery();
+                string insertQuery = "Update Items Set " + item + " = " + item + " - " + anz + " where Username = '" + author + "';";
+                SqlCommand com = new SqlCommand(insertQuery, cnn);
+                com.ExecuteNonQuery();
 
-                    cnn.Close();
-                    Console.WriteLine("Connection Closed\n");
-                }
-                else
-                {
-                    SqlConnection cnn;
-                    connetionString = @"Data Source";
-                    cnn = new SqlConnection(connetionString);
-                    cnn.Open();
-                    Console.WriteLine("Connection Opend");
+                insertQuery = "Update EconomyCoins Set Coins = Coins - " + zahle + " where Username = '" + author + "'; ";
 
-                    zahle = Convert.ToInt32(monback) * Convert.ToInt32(anz);
+                SqlCommand com2 = new SqlCommand(insertQuery, cnn);
+                com2.ExecuteNonQuery();
 
-                    string insertQuery = "Update Items Set " + item + " = " + item + " - " + anz + " where Username = '" + author + "';";
+                cnn.Close();
+                Console.WriteLine("Connection Closed\n");
+                await ReplyAsync(Context.Message.Author.Mention + "Du hesch " + anz + " " + item + " für " + zahle + " verchauft");
 
-                    //Console.WriteLine("Query: " + insertQuery);
-                    SqlCommand com = new SqlCommand(insertQuery, cnn);
-                    com.ExecuteNonQuery();
-
-                    insertQuery = "Update EconomyCoins Set Coins = Coins - " + zahle + " where Username = '" + author + "'; ";
-
-                    SqlCommand com2 = new SqlCommand(insertQuery, cnn);
-                    com2.ExecuteNonQuery();
-
-                    cnn.Close();
-                    Console.WriteLine("Connection Closed\n");
-                    await ReplyAsync(Context.Message.Author.Mention + "Du hesch " + anz + " " + item + " für " + zahle + " verchauft");
-                }
             }
         }
     }
