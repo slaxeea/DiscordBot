@@ -11,7 +11,7 @@ Details zu dem Projekt:
 ________________________________________________
 Author:	Simon Kappeler        
 Datum:	18.2.2020      
-Version:	1.2    
+Version:	1.3    
 Status:	In Bearbeitung        
 Letzte Änderungen:	                                                          
 -Gambling.cs hinzugefügt                                                                                        
