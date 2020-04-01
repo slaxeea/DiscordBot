@@ -14,6 +14,7 @@ Datum:	18.2.2020
 Version:	1.3    
 Status:	In Bearbeitung        
 Letzte Änderungen:	                                                          
+-Currently playing hinzugefügt                                                              
 -Gambling.cs hinzugefügt                                                                                        
 -Der Bot fügt neu gejointe User automatisch in die Database ein                                         
 -Das System verteilt weniger coins, die Items werden teurer                                                
