@@ -10,8 +10,8 @@ https://discordapp.com/api/oauth2/authorize?client_id=664006817659224067&permiss
 Details zu dem Projekt:
 ________________________________________________
 Author:	Simon Kappeler        
-Datum:	18.2.2020      
-Version:	1.3    
+Datum:	1.4.2020      
+Version:	1.4    
 Status:	In Bearbeitung        
 Letzte Änderungen:	                                                          
 -Currently playing hinzugefügt                                                              
