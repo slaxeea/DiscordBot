@@ -43,7 +43,9 @@ namespace TestCorina02
             string token = "/*Hierhin kommt der Token, den ich hier allerdings nicht veröffentlichen darf*/";
             _client.Log += _client_Log;
             _client.UserJoined += AnnounceJoindeUser; //Hook into the UserJoined event of the client.
-
+            
+            _client.SetGameAsync("corina Hi");
+            
             await RegisterCommandsAsync();
 
             await _client.LoginAsync(TokenType.Bot, token);
